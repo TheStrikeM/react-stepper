@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+    Button,
+    Container,
+    FormControl,
+    FormControlLabel,
+    FormHelperText,
+    FormLabel, Grid,
+    Radio,
+    RadioGroup
+} from "@material-ui/core";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Grid container spacing={1}>
+                <Grid container item xs={12} spacing={3}>
+                    Привет
+                </Grid>
+                <Grid container item xs={12} spacing={3}>
+                    Привет
+                </Grid>
+            </Grid>
+        </div>
+    );
 }
 
 export default App;
