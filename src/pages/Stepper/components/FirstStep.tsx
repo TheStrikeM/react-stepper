@@ -4,6 +4,7 @@ import {Box, Button, makeStyles, TextField} from "@material-ui/core"
 import FormData from '../services/FormData'
 import {useFormik} from "formik"
 import * as yup from 'yup'
+import DefaultForm from "./DefaultForm";
 
 interface Values {
     email: string,
@@ -61,36 +62,12 @@ const FirstStep: React.FC<{ title: string }> = ({title}) => {
     });
     const classes = useStyles()
 
+    const fields = [
+        "email", "password"
+    ]
     return (
         <>
-            <form onSubmit={formik.handleSubmit}>
-                <TextField
-                    fullWidth
-                    id="email"
-                    name="email"
-                    label="Email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    error={formik.touched.email && Boolean(formik.errors.email)}
-                    helperText={formik.touched.email && formik.errors.email}
-                />
-                <TextField
-                    fullWidth
-                    id="password"
-                    name="password"
-                    label="Password"
-                    type="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    error={formik.touched.password && Boolean(formik.errors.password)}
-                    helperText={formik.touched.password && formik.errors.password}
-                />
-                <Box maxWidth={"xs-1"}>
-                    <Button className={classes.root} color="primary" variant="contained" type="submit">
-                        Submit
-                    </Button>
-                </Box>
-            </form>
+            <DefaultForm formik={formik} title={title} classes={classes} fields={fields} />
         </>
     )
 }

@@ -10,14 +10,6 @@ const TABS = [
         component: FirstStep,
         title: "First step"
     },
-    {
-        component: SecondStep,
-        title: "Second step"
-    },
-    {
-        component: ThirdStep,
-        title: "Third step"
-    }
 ]
 
 interface StateManager {
