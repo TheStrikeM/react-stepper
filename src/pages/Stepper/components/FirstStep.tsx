@@ -63,7 +63,18 @@ const FirstStep: React.FC<{ title: string }> = ({title}) => {
     const classes = useStyles()
 
     const fields = [
-        "email", "password"
+        {
+            name: "email",
+            value: formik.values.email,
+            error: formik.touched.email && Boolean(formik.errors.email),
+            helperText: formik.touched.email && Boolean(formik.errors.email)
+        },
+        {
+            name: "password",
+            value: formik.values.password,
+            error: formik.touched.password && Boolean(formik.errors.password),
+            helperText: formik.touched.password && Boolean(formik.errors.password)
+        }
     ]
     return (
         <>
