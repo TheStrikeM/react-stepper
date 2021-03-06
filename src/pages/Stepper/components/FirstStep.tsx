@@ -41,13 +41,6 @@ const FirstStep: React.FC<{ title: string }> = ({title}) => {
     const history = useHistory()
     const location = useLocation()
 
-    const onRedirect = () => {
-        history.push({
-            ...location,
-            pathname: "/test"
-        })
-    }
-
     const formik = useFormik({
         initialValues: {
             email: '',
