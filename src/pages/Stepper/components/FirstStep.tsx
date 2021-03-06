@@ -67,13 +67,13 @@ const FirstStep: React.FC<{ title: string }> = ({title}) => {
             name: "email",
             value: formik.values.email,
             error: formik.touched.email && Boolean(formik.errors.email),
-            helperText: formik.touched.email && Boolean(formik.errors.email)
+            helperText: formik.touched.email && formik.errors.email
         },
         {
             name: "password",
             value: formik.values.password,
             error: formik.touched.password && Boolean(formik.errors.password),
-            helperText: formik.touched.password && Boolean(formik.errors.password)
+            helperText: formik.touched.password && formik.errors.password
         }
     ]
     return (

@@ -1,12 +1,12 @@
 import React from 'react';
 import {Container} from "@material-ui/core";
-import FirstStep from "./pages/Stepper/components/FirstStep";
+import StepperPage from "./pages/Stepper";
 
 function App() {
     return (
         <div className="App">
             <Container maxWidth={"xs"}>
-                <FirstStep title={"Привет!"} />
+                <StepperPage />
             </Container>
         </div>
     );

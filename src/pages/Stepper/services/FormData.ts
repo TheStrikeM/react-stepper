@@ -2,19 +2,34 @@ import {STEPPER_FORM_DATA_KEY} from "../constants";
 
 class FormData {
     static setData(formData: Object) {
-        sessionStorage.setItem(STEPPER_FORM_DATA_KEY, JSON.stringify(formData))
+        try {
+            sessionStorage.setItem(STEPPER_FORM_DATA_KEY, JSON.stringify(formData))
+            console.log(formData + " has installed");
+        } catch (e) {
+            console.log('Error:', e)
+        }
     }
 
     static getData() {
-        const formData = sessionStorage.getItem(STEPPER_FORM_DATA_KEY)
-        if(!formData) {
-            return []
+        try {
+            const formData = sessionStorage.getItem(STEPPER_FORM_DATA_KEY)
+            if (!formData) {
+                return []
+            }
+            console.log(formData + " has returned");
+            return JSON.parse(formData)
+        } catch (e) {
+            console.log('Error:', e)
         }
-        return JSON.parse(formData)
     }
 
     static clearFormData() {
-        sessionStorage.removeItem(STEPPER_FORM_DATA_KEY)
+        try {
+            sessionStorage.removeItem(STEPPER_FORM_DATA_KEY)
+            console.log(`formData has cleared`)
+        } catch (e) {
+            console.log('Error:', e)
+        }
     }
 }
 

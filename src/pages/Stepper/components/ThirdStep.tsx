@@ -1,11 +1,15 @@
 import React from "react"
 
-const ThirdStep: React.FC<{ title: string }> = ({title}) => {
+const SecondStep: React.FC<{ title: string }> = ({title}) => {
+
+
+
     return (
         <>
-            ThirdStep
+            <h1>Data:</h1>
+            <p>{}</p>
         </>
     )
 }
 
-export default ThirdStep
+export default SecondStep
